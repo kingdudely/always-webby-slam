@@ -35,7 +35,7 @@ getgenv().lethalDunk = Replication.OnClientEvent:Connect(function(...)
     if info.Effect == "Hunter Grind" and info.Attachment then
         local Character = info.Attachment:FindFirstAncestorWhichIsA("Model")
     
-        -- For some reason Character == LocalCharacter is nil but DebugId == DebugId is true?
+        -- For some reason Character == LocalCharacter is false but DebugId == DebugId is true?
         if Character:GetDebugId() == LocalCharacter:GetDebugId() then
             task.wait(delay)
             HumanoidRootPart:ApplyImpulse(force)
